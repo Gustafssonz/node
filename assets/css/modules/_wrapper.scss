@@ -1,0 +1,6 @@
+.wrapper {
+	width: calc(100vw - 280px);
+	background-color: lighten($base-grey, 60%);
+	min-height: 100vh;
+	float: right;
+}

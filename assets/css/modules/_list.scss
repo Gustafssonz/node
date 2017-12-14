@@ -1,0 +1,56 @@
+.list {
+	padding: 0;
+	margin: -24px 0;
+	list-style: none;
+	float: left;
+	clear: both;
+	width: 100%;
+	a {
+		text-decoration: none;
+		color: #333;
+	}
+	.item {
+		position: relative;
+		display: block;
+		padding: 18px 0;
+		border-bottom: 1px solid #ddd;
+		float: left;
+		width: 100%;
+		clear: both;
+		.column {
+			width: 200px;
+			display: block;
+			float: left;
+			&.small {
+				width: 120px;
+			}
+			&.large {
+				width: 320px;
+			}
+		}
+		.fa {
+			position: absolute;
+			right: 8px;
+			-webkit-transition: right 200ms ease-out;
+			-o-transition: right 200ms ease-out;
+			transition: right 200ms ease-out;
+		}
+		&:hover {
+			.fa {
+				right: 2px;
+			}
+		}
+	}
+}
+
+.dropdown {
+	cursor: pointer;
+	.list {
+		margin: 0;
+		border-left: 6px solid $base-grey;
+		background-color: lighten($base-grey, 60%);
+		.item {
+			padding-left: 20px;
+		}
+	}
+}

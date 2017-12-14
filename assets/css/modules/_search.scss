@@ -1,0 +1,25 @@
+.search {
+	float: left;
+	width: 100%;
+	position: relative;
+	border-bottom: 1px solid #ddd;
+	form {
+		margin: 0;
+	}
+	.fa {
+		position: absolute;
+		left: 24px;
+		top: 18px;
+		color: #777;
+	}
+	input {
+		color: darken($base-grey, 10%);
+		border: none;
+		font-size: 14px;
+		padding: 18px 18px 18px 28px;
+		margin: 0;
+		float: right;
+		width: calc(100% - 22px);
+		outline: 0;
+	}
+}

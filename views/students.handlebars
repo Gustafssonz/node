@@ -1,0 +1,92 @@
+<header>
+	<div class="search">
+		<form action="/student/search" method="post" name="search">
+			<i class="fa fa-search" aria-hidden="true"></i>
+			<input type="text" name="data" placeholder="Search for a student...">
+		</form>
+	</div>
+	<h2 class="title">Students</h2>
+</header>
+<main>
+	<section>
+		<div class="top">
+			264 Student(s)
+		</div>
+		<div class="content">
+			<ul class="list">
+				{{#each students}}
+					<li>
+						<a href="/students/{{this.id}}" class="item">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<span class="column">{{this.firstName}} {{this.lastName}}</span>
+							<span class="column">Apple inc.</span>
+						</a>
+					</li>
+				{{/each}}
+			</ul>
+			<div class="more">
+				<a href="#load-more">Load more (255)</a>
+			</div>
+		</div>
+	</section>
+	<section id="create-student">
+		<div class="top">
+			Insert a new Student
+		</div>
+		<div class="content">
+			<form action="/students" method="post" name="create_student">
+				<div class="field">
+					<label for="first-name">First name</label>
+					<input type="text" name="firstName" id="first-name" placeholder="First name">
+				</div>
+				<div class="field">
+					<label for="last-name">Last name</label>
+					<input type="text" name="lastName" id="last-name" placeholder="Last name">
+				</div>
+				<div class="field">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" placeholder="Email">
+				</div>
+				{{!-- <div class="field">
+					<label for="phone">Phone</label>
+					<input type="tel" name="phone" id="phone" placeholder="Phone">
+				</div>
+				<div class="field">
+					<label for="course">Course</label>
+					<i class="fa fa-angle-down" aria-hidden="true"></i>
+					<select name="course" id="course">
+						<option disabled selected>Select a course</option>
+						<option value="1">Java</option>
+						<option value="2">Web Server</option>
+						<option value="3">Hibernate</option>
+						<option value="4">SpringBoot</option>
+					</select>
+				</div>
+				<div class="field">
+					<label for="tutor">Mentor</label>
+					<i class="fa fa-angle-down" aria-hidden="true"></i>
+					<select name="tutor" id="tutor">
+						<option disabled selected>Select a mentor</option>
+						<option value="1">Anders Bagge</option>
+						<option value="2">Adam Alsing</option>
+						<option value="3">Björn Borg</option>
+					</select>
+				</div>
+				<div class="field">
+					<label for="company">Internship</label>
+					<i class="fa fa-angle-down" aria-hidden="true"></i>
+					<select name="company" id="company">
+						<option disabled selected>Select an internship</option>
+						<option value="null">No current internship</option>
+						<option value="1">Apple Inc.</option>
+						<option value="2">Spotify</option>
+						<option value="3">Google</option>
+					</select>
+				</div> --}}
+			</form>
+			<div class="more">
+				<a href="#create" class="submit blue">Create</a>
+			</div>
+		</div>
+	</section>
+</main>

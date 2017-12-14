@@ -1,0 +1,17 @@
+header {
+	width: 100%;
+	background-color: #fff;
+	float: left;
+	.title {
+		color: #333;
+		margin: 0;
+		padding: 24px;
+		float: left;
+		line-height: 1;
+	}
+	@import "search";
+	.navigation {
+		padding: 8px 24px;
+		border-bottom: 1px solid #ddd;
+	}
+}

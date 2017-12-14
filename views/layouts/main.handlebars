@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+	<body>
+		<div class="sidebar">
+			<ul class="menu">
+				<li>
+					<a class="item{{#if index}} active{{/if}}" href="/">
+						<i class="fa fa-tachometer" aria-hidden="true"></i>
+						Dashboard
+					</a>
+				</li>
+				<li>
+					<a class="item{{#if student}} active{{/if}}" href="/students">
+						<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+						Students
+					</a>
+				</li>
+				<li>
+					<a class="item{{#if tutors}} active{{/if}}" href="/tutors">
+						<i class="fa fa-user" aria-hidden="true"></i>
+						Tutors
+					</a>
+				</li>
+				<li>
+					<a class="item{{#if courses}} active{{/if}}" href="/courses">
+						<i class="fa fa-book" aria-hidden="true"></i>
+						Courses
+					</a>
+				</li>
+				<li>
+					<a class="item{{#if companies}} active{{/if}}" href="/companies">
+						<i class="fa fa-building" aria-hidden="true"></i>
+						Companies
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="wrapper">
+			{{{body}}}
+		</div>
+		<script src="/js/jquery.js"></script>
+		<script src="/js/script.js"></script>
+	</body>
+</html>

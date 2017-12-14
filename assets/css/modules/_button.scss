@@ -1,0 +1,50 @@
+button,
+.button {
+	color: #fff;
+	padding: 12px 24px;
+	background-color: $base-green;
+	border-radius: 21px;
+	font-size: 12px;
+	display: inline-block;
+	text-decoration: none;
+	position: relative;
+	&:visited {
+		color: #fff;
+	}
+	&.pink {
+		background-color: $base-pink;
+	}
+	&.blue {
+		background-color: $base-blue;
+	}
+	&:hover {
+		background-color: darken($base-green, 6%);
+		&.pink {
+			background-color: darken($base-pink, 6%);
+		}
+		&.blue {
+			background-color: darken($base-blue, 6%);
+		}
+	}
+	&:active {
+		background-color: darken($base-green, 10%);
+		&.pink {
+			background-color: darken($base-pink, 10%);
+		}
+		&.blue {
+			background-color: darken($base-blue, 10%);
+		}
+	}
+	&.right {
+		float: right;
+	}
+	&.icon {
+		padding-left: 40px;
+		.fa {
+			font-size: 16px;
+			position: absolute;
+			top: 10px;
+			left: 24px;
+		}
+	}
+}
