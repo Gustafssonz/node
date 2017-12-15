@@ -68,7 +68,7 @@ unction ipcListeners() {
         let username = usernameModule.getUsername();
         indexWindow.webContents.send('username', username);
     });
-    //  Check if already logged in.. 
+    //  Check if already logged in..
     ipcMain.on('check_login', function(event, value) {
         let bool = tokenModule.checkToken();
         indexWindow.webContents.send('is_logged_in', bool);

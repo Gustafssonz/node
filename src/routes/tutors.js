@@ -10,15 +10,16 @@ router.get('/tutors', function(req, res) {
         }
 
         res.render('tutors', {
-            tutors: items
-            //tutors: true
+            tutors: items,
+            navigation: {
+              tutors: true
+            }
         })
     });
 })
 
 router.post('/tutors', function(req, res) {
     var item = new Tutor(req.body);
-
     item.save(function(err) {
         if (err) {
             console.log(err);

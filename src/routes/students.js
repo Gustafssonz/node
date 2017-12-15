@@ -11,8 +11,10 @@ router.get('/students', function(req, res) {
 
         res.render('students', {
             students: items,
-            student: true
-        })
+            navigation: {
+              students: true
+            }
+          })
     });
 })
 

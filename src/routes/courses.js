@@ -4,13 +4,16 @@ var Courses = require('models/course');
 var router = express.Router();
 
 router.get('/courses', function(req, res) {
-    Companies.find({}, function(err, items) {
+    Courses.find({}, function(err, items) {
         if (err) {
             console.log(err);
         }
 
         res.render('courses', {
-            courses: items
+            courses: items,
+            navigation: {
+              courses: true
+            }
         })
     });
 })
@@ -31,6 +34,9 @@ router.post('/courses', function(req, res) {
 
 router.get('/courses/:id', function(req, res) {
     Courses.findById(req.params.id, function(err, item) {
+      if (err) {
+          console.log(err);
+      }
         res.render('courses', item);
     });
 })

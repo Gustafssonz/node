@@ -10,7 +10,10 @@ router.get('/companies', function(req, res) {
         }
 
         res.render('companies', {
-            companies: items
+            companies: items,
+            navigation: {
+              companies: true
+            }
         })
     });
 })
@@ -31,6 +34,9 @@ router.post('/companies', function(req, res) {
 
 router.get('/companies/:id', function(req, res) {
     Companies.findById(req.params.id, function(err, item) {
+      if (err) {
+          console.log(err);
+      }
         res.render('companies', item);
     });
 })
