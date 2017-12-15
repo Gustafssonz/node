@@ -1,22 +1,22 @@
 var express = require('express');
-var Courses = require('models/courses');
+var Courses = require('models/course');
 
 var router = express.Router();
 
-router.get('/companies', function(req, res) {
+router.get('/courses', function(req, res) {
     Companies.find({}, function(err, items) {
         if (err) {
             console.log(err);
         }
 
-        res.render('companies', {
-            companies: items
+        res.render('courses', {
+            courses: items
         })
     });
 })
 
-router.post('/companies', function(req, res) {
-    var item = new Companies(req.body);
+router.post('/courses', function(req, res) {
+    var item = new Courses(req.body);
 
     item.save(function(err) {
         if (err) {
@@ -26,12 +26,12 @@ router.post('/companies', function(req, res) {
         console.log('Item saved to db!');
     });
 
-    res.redirect('/companies');
+    res.redirect('/courses');
 })
 
-router.get('/companies/:id', function(req, res) {
-    Companies.findById(req.params.id, function(err, item) {
-        res.render('companies', item);
+router.get('/courses/:id', function(req, res) {
+    Courses.findById(req.params.id, function(err, item) {
+        res.render('courses', item);
     });
 })
 

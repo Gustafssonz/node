@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-	firstName: String,
-	lastName: String,
-	email: String
+	name: String,
+	startDate: String,
+	endDate: String
 });
 // blir alltid s i slutet ändå i mongodb
-module.exports = mongoose.model('students', schema);
+module.exports = mongoose.model('courses', schema);

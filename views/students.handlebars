@@ -1,8 +1,9 @@
 <header>
 	<div class="search">
-		<form action="/student/search" method="post" name="search">
+		<form action="/students/search" method="post" name="search">
 			<i class="fa fa-search" aria-hidden="true"></i>
 			<input type="text" name="data" placeholder="Search for a student...">
+			<!-- insert the lookup for student with inputtext -->
 		</form>
 	</div>
 	<h2 class="title">Students</h2>
@@ -14,6 +15,7 @@
 		</div>
 		<div class="content">
 			<ul class="list">
+				<!-- Kanske måste ladda om varje student? -->
 				{{#each students}}
 					<li>
 						<a href="/students/{{this.id}}" class="item">

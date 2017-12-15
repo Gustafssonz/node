@@ -1,5 +1,5 @@
 var express = require('express');
-var Companies = require('models/companies');
+var Companies = require('models/company');
 
 var router = express.Router();
 

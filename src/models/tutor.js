@@ -5,5 +5,5 @@ var schema = new mongoose.Schema({
 	lastName: String,
 	email: String
 });
-
+// blir alltid s i slutet ändå i mongodb
 module.exports = mongoose.model('tutors', schema);
