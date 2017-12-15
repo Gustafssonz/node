@@ -24,6 +24,7 @@ router.post('/tutors', function(req, res) {
         if (err) {
             console.log(err);
         }
+        console.log(req.body)
 
         console.log('Item saved to db!');
     });
