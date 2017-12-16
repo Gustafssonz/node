@@ -1,10 +1,11 @@
 <header>
 	<div class="search">
-		<form action="/{{url}}/search" method="post" name="search">
+		<form action="/api/{{url}}/search" method="post" name="search">
 			<i class="fa fa-search" aria-hidden="true"></i>
 			<input type="text" name="data" placeholder="Search for a {{placeholder}}...">
 			<!-- insert the lookup for student with inputtext -->
 		</form>
+		<div class="results hidden"></div>
 	</div>
 	<h2 class="title">{{title}}</h2>
 </header>

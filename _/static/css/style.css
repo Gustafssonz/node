@@ -79,7 +79,10 @@ header {
     position: relative;
     border-bottom: 1px solid #ddd; }
     header .search form {
-      margin: 0; }
+      margin: 0;
+      position: relative;
+      float: left;
+      width: 100%; }
     header .search .fa {
       position: absolute;
       left: 24px;
@@ -94,6 +97,28 @@ header {
       float: right;
       width: calc(100% - 22px);
       outline: 0; }
+    header .search .results {
+      float: left;
+      width: 100%;
+      padding: 12px 12px 12px 38px;
+      border-top: 1px solid #ddd;
+      position: absolute;
+      top: 100%;
+      background-color: #fff;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+      z-index: 1; }
+      header .search .results.hidden {
+        display: none; }
+      header .search .results .result {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        padding: 12px;
+        border-top: 1px solid #ddd; }
+        header .search .results .result:first-child {
+          border: none; }
+        header .search .results .result:hover {
+          text-decoration: underline; }
   header .navigation {
     padding: 8px 24px;
     border-bottom: 1px solid #ddd; }
