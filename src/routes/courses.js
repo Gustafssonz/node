@@ -37,7 +37,7 @@ router.get('/courses/:id', function(req, res) {
       if (err) {
           console.log(err);
       }
-        res.render('courses', item);
+        res.render('course', item);
     });
 })
 

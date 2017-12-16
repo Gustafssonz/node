@@ -37,7 +37,7 @@ router.get('/companies/:id', function(req, res) {
       if (err) {
           console.log(err);
       }
-        res.render('companies', item);
+        res.render('company', item);
     });
 })
 

@@ -37,7 +37,7 @@ router.get('/tutors/:id', function(req, res) {
       if (err) {
         console.log(err)
       }
-        res.render('tutors', item);
+        res.render('tutor', item);
     });
 })
 

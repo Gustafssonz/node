@@ -1,82 +1,48 @@
-<header>
-	<div class="navigation">
-		<a href="/courses" class="blue button icon">
-			<i class="fa fa-angle-left" aria-hidden="true"></i>
-			Go back
-		</a>
-	</div>
-	<h2 class="title">{{name}} (id: {{id}})</h2>
-</header>
+{{> header url="courses" placeholder="course" title="Courses"}}
 <main>
 	<section>
-		<div class="top">Description</div>
+		<div class="top">
+			4 Courses(s)
+		</div>
 		<div class="content">
 			<ul class="list">
-				<li class="item">
-					<div class="small column"><b>Course</b></div>
-					<div class="large column">{{name}}</div>
-				</li>
-				<li class="item">
-					<div class="small column"><b>Start Date</b></div>
-          <div class="large column">{{startDate}}</div>
+				<!-- Kanske måste ladda om varje student? -->
+				{{#each courses}}
+					<li>
+						<a href="/courses/{{this.id}}" class="item">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+							<span class="column">{{this.name}} </span>
+						</a>
 					</li>
-        <li class="item">
-					<div class="small column"><b>End Date</b></div>
-          <div class="large column">{{endDate}}</div>
-				</li>
-
-
-				<!-- <li class="item">
-					<div class="small column"><b>Email</b></div>
-					<div class="large column"></div>
-				</li> -->
-
-				{{!-- <li class="item">
-					<div class="small column"><b>Phone</b></div>
-					<div class="large column"><a href="tel:0046701234567">070 - 123 45 67</a></div>
-				</li>
-				<li class="dropdown">
-					<div class="item">
-						<i class="fa fa-angle-down" aria-hidden="true"></i>
-						<div class="small column"><b>Course(s)</b></div>
-						<div class="large column">2 Course(s)</div>
-					</div>
-					<ul class="list">
-						<li>
-							<a href="course.html" class="item">
-								<i class="fa fa-angle-right" aria-hidden="true"></i>
-								<div class="small column"><b>Course</b></div>
-								<div class="column">Java</div>
-							</a>
-						</li>
-						<li>
-							<a href="tutor.html" class="item">
-								<i class="fa fa-angle-right" aria-hidden="true"></i>
-								<div class="small column"><b>Course</b></div>
-								<div class="column">Hibernate</div>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="tutor.html" class="item">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-						<div class="small column"><b>Mentor</b></div>
-						<div class="large column">Anders Bagge</div>
-					</a>
-				</li>
-				<li>
-					<a href="company.html" class="item">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-						<div class="small column"><b>Internship</b></div>
-						<div class="large column">Apple inc.</div>
-					</a>
-				</li> --}}
+				{{/each}}
 			</ul>
 			<div class="more">
-				<a href="#edit">Edit</a>
-				<a href="#delete" class="right pink">Delete</a>
+				<a href="#load-more">Load more (255)</a>
 			</div>
+		</div>
+	</section>
+	<section id="create-student">
+		<div class="top">
+			Insert a new Course
+		</div>
+		<div class="content">
+			<form action="/courses" method="post">
+				<div class="field">
+					<label for="name">Course name</label>
+					<input type="text" name="name" id="name" placeholder="Name">
+				</div>
+				<div class="field">
+					<label for="startDate">Start Date</label>
+					<input type="text" name="startDate" id="startDate" placeholder="Start date">
+				</div>
+				<div class="field">
+					<label for="endDate">End Date</label>
+					<input type="text" name="endDate" id="endDate" placeholder="End date">
+				</div>
+				<div class="more">
+					<button type="submit" class="blue">Create</button>
+				</div>
+			</form>
 		</div>
 	</section>
 </main>

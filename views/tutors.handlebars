@@ -1,12 +1,4 @@
-<header>
-	<div class="search">
-		<form action="/tutors/search" method="post" name="search">
-			<i class="fa fa-search" aria-hidden="true"></i>
-			<input type="text" name="data" placeholder="Search for a tutors...">
-		</form>
-	</div>
-	<h2 class="title">Tutors</h2>
-</header>
+{{> header url="tutors" placeholder="tutor" title="Tutors"}}
 <main>
 	<section>
 		<div class="top">
@@ -34,7 +26,7 @@
 			Insert a new Tutor
 		</div>
 		<div class="content">
-			<form action="/tutors" method="post" name="create_tutor">
+			<form action="/tutors" method="post">
 				<div class="field">
 					<label for="first-name">First name</label>
 					<input type="text" name="firstName" id="first-name" placeholder="First name">

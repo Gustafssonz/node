@@ -1,12 +1,5 @@
-<header>
-	<div class="navigation">
-		<a href="/students" class="blue button icon">
-			<i class="fa fa-angle-left" aria-hidden="true"></i>
-			Go back
-		</a>
-	</div>
-	<h2 class="title">{{firstName}} {{lastName}} (id: {{id}})</h2>
-</header>
+{{> header url="students" placeholder="student" title="Students"}}
+
 <main>
 	<section>
 		<div class="top">Description</div>
@@ -24,47 +17,6 @@
 					<div class="small column"><b>Email</b></div>
 					<div class="large column"><a href="mailto:{{email}}">{{email}}</a></div>
 				</li>
-				{{!-- <li class="item">
-					<div class="small column"><b>Phone</b></div>
-					<div class="large column"><a href="tel:0046701234567">070 - 123 45 67</a></div>
-				</li>
-				<li class="dropdown">
-					<div class="item">
-						<i class="fa fa-angle-down" aria-hidden="true"></i>
-						<div class="small column"><b>Course(s)</b></div>
-						<div class="large column">2 Course(s)</div>
-					</div>
-					<ul class="list">
-						<li>
-							<a href="course.html" class="item">
-								<i class="fa fa-angle-right" aria-hidden="true"></i>
-								<div class="small column"><b>Course</b></div>
-								<div class="column">Java</div>
-							</a>
-						</li>
-						<li>
-							<a href="tutor.html" class="item">
-								<i class="fa fa-angle-right" aria-hidden="true"></i>
-								<div class="small column"><b>Course</b></div>
-								<div class="column">Hibernate</div>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="tutor.html" class="item">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-						<div class="small column"><b>Mentor</b></div>
-						<div class="large column">Anders Bagge</div>
-					</a>
-				</li>
-				<li>
-					<a href="company.html" class="item">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-						<div class="small column"><b>Internship</b></div>
-						<div class="large column">Apple inc.</div>
-					</a>
-				</li> --}}
 			</ul>
 			<div class="more">
 				<a href="#edit">Edit</a>

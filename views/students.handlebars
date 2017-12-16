@@ -1,13 +1,4 @@
-<header>
-	<div class="search">
-		<form action="/students/search" method="post" name="search">
-			<i class="fa fa-search" aria-hidden="true"></i>
-			<input type="text" name="data" placeholder="Search for a student...">
-			<!-- insert the lookup for student with inputtext -->
-		</form>
-	</div>
-	<h2 class="title">Students</h2>
-</header>
+{{> header url="students" placeholder="student" title="Students"}}
 <main>
 	<section>
 		<div class="top">
@@ -36,7 +27,7 @@
 			Insert a new Student
 		</div>
 		<div class="content">
-			<form action="/students" method="post" name="create_student">
+			<form action="/students" method="post">
 				<div class="field">
 					<label for="first-name">First name</label>
 					<input type="text" name="firstName" id="first-name" placeholder="First name">
@@ -48,6 +39,10 @@
 				<div class="field">
 					<label for="email">Email</label>
 					<input type="email" name="email" id="email" placeholder="Email">
+				</div>
+				<div class="field">
+					<label for="phone">Phone</label>
+					<input type="tel" name="phone" id="phone" placeholder="phone">
 				</div>
 				<div class="more">
 					<button type="submit" class="blue">Create</button>
