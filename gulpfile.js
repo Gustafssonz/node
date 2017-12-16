@@ -7,8 +7,8 @@ gulp.task('sass:watch', () => {
 });
 
 gulp.task('sass', () => (
-    gulp.src('./assets/css/**/*.scss')
+    gulp.src('./assets/css/style.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('style.css'))
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('./static/css'))
 ));

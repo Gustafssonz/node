@@ -20,11 +20,11 @@ router.get('/tutors', function(req, res) {
 
 router.post('/tutors', function(req, res) {
     var item = new Tutor(req.body);
+
     item.save(function(err) {
         if (err) {
             console.log(err);
         }
-        console.log(req.body)
 
         console.log('Item saved to db!');
     });
