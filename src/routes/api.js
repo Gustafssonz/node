@@ -57,7 +57,7 @@ router.post('/:type', async(req, res) => {
 router.put('/:type/:id', async(req, res) => {
     try {
         req.body.updated = Date.now();
-        const result = await types[req.params.type].findOneAndUpdate({ _id: req.params.id }, req.body, { new: true });
+        const result = await types[req.params.type].findOneAndUpdate({ _id: req.params.id }, { $set: req.body }, { new: true });
 
         res.json(result);
     } catch (err) {

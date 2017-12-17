@@ -27,7 +27,7 @@ schema.pre('save', function(next) {
 // Update the search term before updating the document.
 schema.post('findOneAndUpdate', async function(doc) {
 	if (this._update.name) {
-		doc.search = doc.name
+		doc.search = doc.name;
 	}
 
 	await doc.save();
