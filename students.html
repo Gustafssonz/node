@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="sidebar">
+    <ul class="menu">
+      <li>
+        <a class="item" href="/">
+          <i class="fa fa-tachometer" aria-hidden="true"></i>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a class="item active" href="students.html">
+          <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          Students
+        </a>
+      </li>
+      <li>
+        <a class="item" href="tutors.html">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          Tutors
+        </a>
+      </li>
+      <li>
+        <a class="item" href="courses.html">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          Courses
+        </a>
+      </li>
+      <li>
+        <a class="item" href="companies.html">
+          <i class="fa fa-building" aria-hidden="true"></i>
+          Companies
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="wrapper">
+    <header>
+      <div class="search">
+        <form action="http://localhost:3000/api/search/students" method="post" name="search">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <input type="text" name="data" placeholder="Search for a student...">
+        </form>
+        <div class="results hidden"></div>
+      </div>
+      <h2 class="title">Students</h2>
+    </header>
+    <main>
+      <section>
+        <div class="top">
+          <span class="nr-of-items">0</span> Students(s)
+        </div>
+        <div class="content">
+          <ul class="list"></ul>
+          <div class="more">
+            <a href="#load-more">Load more (<span class="nr-of-remaining-items">0</span>)</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+  window.$ = window.jQuery = require('./assets/js/jquery.min');
+  </script>
+  <script>
+  const { ipcRenderer } = require('electron');
+  const items = JSON.parse(ipcRenderer.sendSync('api', { type: 'students', req: 'find' }));
+  const html = items.map((item) => (`<li>
+    <a href="/students/${item._id}" class="item">
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+      <span class="column">${item.firstName} ${item.lastName}</span>
+    </a>
+  </li>`));
+
+  $('main .list').html(html);
+  $('main .nr-of-items').html(items.length);
+  </script>
+  <script>
+  require('./assets/js/script');
+  </script>
+</body>
+
+</html>

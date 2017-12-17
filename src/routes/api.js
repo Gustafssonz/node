@@ -19,6 +19,21 @@ const types = {
     companies: Company
 };
 
+// Search.
+router.get('/search/:type', async(req, res) => {
+    try {
+        // Create a regex so partial words matches. E.g. "foob" matches "foobar".
+        const regex = new RegExp(req.query.text, 'i');
+
+        // Search for regex in the indexed "search"-field.
+        const result = await types[req.params.type].find({ search: regex });
+
+        res.json(result);
+    } catch (err) {
+        res.status(500).send({ description: `Could not search for ${req.params.type}.`, message: err.message, stack: err.stack });
+    }
+});
+
 // Find all.
 router.get('/:type', async(req, res) => {
     try {
@@ -78,21 +93,6 @@ router.delete('/:type/:id', async(req, res) => {
         }
     } catch (err) {
         res.status(500).send({ description: `Could not remove a document with id ${req.params.id} in ${req.params.type}.`, message: err.message, stack: err.stack });
-    }
-});
-
-// Search.
-router.get('/:type/search', async(req, res) => {
-    try {
-        // Create a regex so partial words matches. E.g. "foob" matches "foobar".
-        const regex = new RegExp(req.query.text, 'i');
-
-        // Search for regex in the indexed "search"-field.
-        const result = await types[req.params.type].find({ search: regex }, { search: 1 });
-
-        res.json(result);
-    } catch (err) {
-        res.status(500).send({ description: `Could not search for ${req.params.type}.`, message: err.message, stack: err.stack });
     }
 });
 
